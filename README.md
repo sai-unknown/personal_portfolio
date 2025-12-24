@@ -42,11 +42,11 @@ A modern, responsive personal portfolio website built using **Next.js**, **React
 
 ## 🧑‍💻 Getting Started (Local Setup)
 
-git clone https://github.com/sai-unknown/personal_portfolio.git
-cd personal_portfolio
-npm install
-npm run dev
-Open 👉 http:localhost:3000
+- git clone https://github.com/sai-unknown/personal_portfolio.git
+- cd personal_portfolio
+- npm install
+- npm run dev
+- Open 👉 http:localhost:3000
 
 ---
 
