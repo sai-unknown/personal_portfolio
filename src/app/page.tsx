@@ -18,7 +18,7 @@ export default function Home() {
       </p>
 
       <Link
-        href="mailto:contact@sandeeprathod.com"
+        href="mailto:sandeeprathod455161@ggmail.com"
         className="bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-6 py-3 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors font-medium"
         aria-label="Contact Sandeep Rathod via email"
       >
