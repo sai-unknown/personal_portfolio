@@ -5,7 +5,7 @@ A modern, responsive personal portfolio website built using **Next.js**, **React
 ---
 
 ## 🚀 Live Demo
-🔗 https://personal-portfolio.vercel.app
+🔗 https://sandeeprathodportfolio.vercel.app/
 ---
 
 ## 🛠️ Tech Stack
@@ -65,6 +65,6 @@ This project is deployed on Vercel with automatic deployment enabled on every Gi
 ## 📬 Contact
 
 - GitHub: https://github.com/sai-unknown
-- Portfolio: https://personal-portfolio.vercel.app
+- Portfolio: https://sandeeprathodportfolio.vercel.app/
 
 ---
