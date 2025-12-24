@@ -47,22 +47,25 @@ git clone https://github.com/sai-unknown/personal_portfolio.git
 cd personal_portfolio
 npm install
 npm run dev
-
-
 Open 👉 http:localhost:3000
 
+---
 
-🚀 Deployment
+
+
+## 🚀 Deployment
 
 This project is deployed on Vercel with automatic deployment enabled on every GitHub push.
 
 ---
 
-📸 Preview
+## 📸 Preview
 
 ---
 
-📬 Contact
+## 📬 Contact
 
-GitHub: https://github.com/sai-unknown
-Portfolio: https://personal-portfolio.vercel.app
+- GitHub: https://github.com/sai-unknown
+- Portfolio: https://personal-portfolio.vercel.app
+
+---
