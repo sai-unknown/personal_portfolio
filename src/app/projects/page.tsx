@@ -87,8 +87,8 @@ const projects = [
         id: 1,
         title: "Personal Portfolio",
         description: "A showcase of my skills and creativity in web development.",
-        demoUrl: "#",
-        codeUrl: "#",
+        demoUrl: "https://sandeeprathodportfolio.vercel.app/",
+        codeUrl: "#https://github.com/sai-unknown/personal_portfolio.git",
     },
     {
         id: 2,
