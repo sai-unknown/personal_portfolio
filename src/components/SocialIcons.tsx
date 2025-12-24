@@ -5,17 +5,17 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 export default function SocialIcons() {
   const socialLinks = [
     {
-      href: "https://github.com",
+      href: "https://github.com/sai-unknown",
       icon: FaGithub,
       label: "GitHub",
     },
     {
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/sandeep-rath0d/",
       icon: FaLinkedin,
       label: "LinkedIn",
     },
     {
-      href: "mailto:contact@sandeeprathod.com",
+      href: "mailto:sandeeprathod455161@gmail.com",
       icon: FaEnvelope,
       label: "Email",
     },
