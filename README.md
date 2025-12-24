@@ -56,9 +56,6 @@ A modern, responsive personal portfolio website built using **Next.js**, **React
 
 This project is deployed on Vercel with automatic deployment enabled on every GitHub push.
 
----
-
-## 📸 Preview
 
 ---
 
