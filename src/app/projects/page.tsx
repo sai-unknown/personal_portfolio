@@ -92,10 +92,10 @@ const projects = [
     },
     {
         id: 2,
-        title: "Project 2",
-        description: "An innovative solution combining design and functionality.",
-        demoUrl: "#",
-        codeUrl: "#",
+        title: "Automated Security System",
+        description: "A smart surveillance system using Python, OpenCV, and face recognition that triggers alerts only on motion detection, making security monitoring efficient and intelligent.",
+        demoUrl: "https://github.com/sai-unknown/Automated-Security-System",
+        codeUrl: "https://github.com/sai-unknown/Automated-Security-System",
     },
     {
         id: 3,
