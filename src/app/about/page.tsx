@@ -42,8 +42,8 @@ export default function About() {
 
           <a
             href="/B.SANDEEP RATHOD_RESUME.pdf"
-            download
-            {/*target="_blank" */}
+            {/*download*/}
+            target="_blank"
           
             rel="noopener noreferrer"
             className="inline-block bg-gray-200 text-black px-6 py-3 rounded-lg hover:bg-gray-300 transition-colors"
