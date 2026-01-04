@@ -13,7 +13,7 @@ export default function Home() {
         SANDEEP RATHOD<span className="text-gray-400">.B</span>
       </h1>
       <p className= "text-gray-600 dark:text-gray-300 text-lg sm:text-xl">
-        Computer Science Undergraduate | Data Analytics & Computer Vision Projects
+        Computer Science Undergraduate | Data Analytics
       </p>
 
       <p className="text-gray-600 dark:text-gray-300 text-lg sm:text-xl">
