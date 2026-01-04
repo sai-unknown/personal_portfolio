@@ -8,11 +8,13 @@ export const metadata: Metadata = {
 interface ProjectCardProps {
   title: string;
   description: string;
+  techStack?: string;
+  Result?: string;
   demoUrl?: string;
   codeUrl?: string;
 }
 
-function ProjectCard({ title, description, demoUrl, codeUrl }: ProjectCardProps) {
+function ProjectCard({ title, description, techStack, Result, demoUrl, codeUrl }: ProjectCardProps) {
     return (
         <article className="group backdrop-blur-md bg-white/5 rounded-2xl p-6 flex flex-col justify-between hover:bg-white/10 transition-all duration-300 border border-white/10">
             {/* TEXT */}
@@ -22,6 +24,12 @@ function ProjectCard({ title, description, demoUrl, codeUrl }: ProjectCardProps)
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
                     {description}
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                    <span className="font-semibold">Tech Stack:</span> {techStack}
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                    <span className="font-semibold">Result:</span> {Result}
                 </p>
             </div>
 
@@ -87,13 +95,17 @@ const projects = [
         id: 1,
         title: "Personal Portfolio",
         description: "A showcase of my skills and creativity in web development.",
+        techStack: "Next.js, TypeScript, Tailwind CSS, Framer Motion.", 
+        Result: "95+ light house score",
         demoUrl: "https://sandeeprathoddev.vercel.app/",
         codeUrl: "https://github.com/sai-unknown/personal_portfolio.git",
     },
     {
         id: 2,
         title: "Automated Security System",
-        description: "Motion-triggered face recognition system to reduce unnecessary processing.",
+        description: "An AI-powered security system that detects and recognizes faces in real-time video feeds.",
+        techStack: "Python, OpenCV, Face Recognition",
+        Result: "~82% recognition accuracy, event-driven pipeline",
         demoUrl: "https://github.com/sai-unknown/Automated-Security-System",
         codeUrl: "https://github.com/sai-unknown/Automated-Security-System",
     },
@@ -101,6 +113,8 @@ const projects = [
         id: 3,
         title: "Project 3",
         description: "Comming soon..",
+        techStack: "Comming soon..",
+        Result: "Comming soon..",
         demoUrl: "#",
         codeUrl: "#",
     },
@@ -108,6 +122,8 @@ const projects = [
         id: 4,
         title: "Project 4",
         description: "Comming soon..",
+        techStack: "Comming soon..",
+        Result: "Comming soon..",
         demoUrl: "#",
         codeUrl: "#",
     },
@@ -115,6 +131,8 @@ const projects = [
         id: 5,
         title: "Project 5",
         description: "Comming soon..",
+        techStack: "Comming soon..",
+        Result: "Comming soon..",
         demoUrl: "#",
         codeUrl: "#",
     },
@@ -122,6 +140,8 @@ const projects = [
         id: 6,
         title: "Project 6",
         description: "Comming soon..",
+        techStack: "Comming soon..",
+        Result: "Comming soon..",
         demoUrl: "#",
         codeUrl: "#",
     },
@@ -141,6 +161,8 @@ export default function Projects() {
                                 key={project.id}
                                 title={project.title}
                                 description={project.description}
+                                techStack={project.techStack}
+                                Result={project.Result}
                                 demoUrl={project.demoUrl}
                                 codeUrl={project.codeUrl}
                             />
