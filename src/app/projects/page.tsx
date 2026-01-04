@@ -86,14 +86,18 @@ const projects = [
     {
         id: 1,
         title: "Personal Portfolio",
-        description: "A showcase of my skills and creativity in web development.",
+        description: "A showcase of my skills and creativity in web development.
+                      Tech: TypeScript, JavaScript, HTML, CSS
+                      Results: 95+ Lighthouse scores",
         demoUrl: "https://sandeeprathoddev.vercel.app/",
         codeUrl: "https://github.com/sai-unknown/personal_portfolio.git",
     },
     {
         id: 2,
         title: "Automated Security System",
-        description: "A smart surveillance system using Python, OpenCV, and face recognition that triggers alerts only on motion detection, making security monitoring efficient and intelligent.",
+        description: "Motion-triggered face recognition system to reduce unnecessary processing.
+                      Tech: Python, OpenCV, NumPy
+                      Results: ~82% recognition accuracy, event-driven pipeline",
         demoUrl: "https://github.com/sai-unknown/Automated-Security-System",
         codeUrl: "https://github.com/sai-unknown/Automated-Security-System",
     },
