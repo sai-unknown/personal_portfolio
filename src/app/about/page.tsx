@@ -24,20 +24,19 @@ export default function About() {
           <h1 className="text-3xl sm:text-4xl font-semibold">Hello there..</h1>
 
           <p className="text-gray-600 dark:text-gray-300">
-            I&apos;m Sandeep, a creative person who enjoys designing and editing photos
-            and videos. I take pride in every project I work on and enjoy
-            transforming concepts into visually appealing content.
+            I&apos;m Sandeep, a committed Computer Science Graduate in 
+            Artificial Intelligence & Data Science with a special interest 
+            in computer vision and data analysis.
           </p>
 
           <p className="text-gray-600 dark:text-gray-300">
-            In addition to having practical experience with video editing programs
-            like CapCut, Adobe Premiere Pro, and After Effects, I am proficient in
-            web development using Python, Java, HTML, CSS, and JavaScript.
+            Besides having working knowledge in development, I share 
+            informative content on technical issues in LinkedIn.
           </p>
 
           <p className="text-gray-600 dark:text-gray-300">
-            I&apos;m self-driven, inquisitive, respectful of all labour, and constantly
-            ready to pick up new skills.
+            I&apos;m self-motivated, curious, and always ready to acquire
+            new skills. Open to Data Analytics & Technical Internships – From Jan 2026
           </p>
 
           <a

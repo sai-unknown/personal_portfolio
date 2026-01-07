@@ -103,9 +103,7 @@ const projects = [
     {
         id: 2,
         title: "Automated Security System",
-        description: "An AI-powered security system that detects and recognizes faces in real-time video feeds.",
-        techStack: "Python, OpenCV, Face Recognition",
-        Result: "Efficient and intelligent security monitoring",
+        description: "A smart surveillance system using Python, OpenCV, and face recognition that triggers alerts only on motion detection, making security monitoring efficient and intelligent.",
         demoUrl: "https://github.com/sai-unknown/Automated-Security-System",
         codeUrl: "https://github.com/sai-unknown/Automated-Security-System",
     },
