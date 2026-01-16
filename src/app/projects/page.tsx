@@ -104,6 +104,8 @@ const projects = [
         id: 2,
         title: "Automated Security System",
         description: "A smart surveillance system using Python, OpenCV, and face recognition that triggers alerts only on motion detection, making security monitoring efficient and intelligent.",
+        techStack: "Python, OpenCV, LBPH Face Recognizer", 
+        Result: "~ 82% of face recognized under perfect Lighting💡",
         demoUrl: "https://github.com/sai-unknown/Automated-Security-System",
         codeUrl: "https://github.com/sai-unknown/Automated-Security-System",
     },
