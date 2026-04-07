@@ -1,61 +1,54 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function MouseFollower() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [displayPosition, setDisplayPosition] = useState({ x: 0, y: 0 });
   const [isHoveringInteractive, setIsHoveringInteractive] = useState(false);
-  const [isReducedMotion, setIsReducedMotion] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isReducedMotion, setIsReducedMotion] = useState(() =>
+    typeof window !== "undefined"
+      ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      : false
+  );
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== "undefined"
+      ? window.matchMedia("(pointer: coarse)").matches
+      : false
+  );
+
   const animationFrameRef = useRef<number | undefined>(undefined);
   const positionRef = useRef({ x: 0, y: 0 });
+  const targetRef = useRef({ x: 0, y: 0 }); // ✅ replaces mousePosition state
 
-  // Check for reduced motion preference and mobile devices
+  // Check for reduced motion preference and input type changes
   useEffect(() => {
-    // Check for reduced motion
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setIsReducedMotion(mediaQuery.matches);
+    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const pointerQuery = window.matchMedia("(pointer: coarse)");
 
     const handleReducedMotion = (e: MediaQueryListEvent) => {
       setIsReducedMotion(e.matches);
     };
-
-    mediaQuery.addEventListener("change", handleReducedMotion);
-
-    // Check for mobile/touch devices
-    const checkMobile = () => {
-      const isTouchDevice =
-        "ontouchstart" in window ||
-        navigator.maxTouchPoints > 0 ||
-        // @ts-ignore - some browsers support this
-        navigator.msMaxTouchPoints > 0;
-      setIsMobile(isTouchDevice);
+    const handlePointerChange = (e: MediaQueryListEvent) => {
+      setIsMobile(e.matches);
     };
 
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
+    reducedMotionQuery.addEventListener("change", handleReducedMotion);
+    pointerQuery.addEventListener("change", handlePointerChange);
 
     return () => {
-      mediaQuery.removeEventListener("change", handleReducedMotion);
-      window.removeEventListener("resize", checkMobile);
+      reducedMotionQuery.removeEventListener("change", handleReducedMotion);
+      pointerQuery.removeEventListener("change", handlePointerChange);
     };
   }, []);
 
-  // Smooth animation using requestAnimationFrame
+  // ✅ Single animation loop — never restarts on mouse move
   useEffect(() => {
-    if (isReducedMotion || isMobile) {
-      return;
-    }
+    if (isReducedMotion || isMobile) return;
 
     const animate = () => {
-      // Smooth easing factor (lower = smoother, more delay)
       const easing = 0.15;
-
-      positionRef.current.x +=
-        (mousePosition.x - positionRef.current.x) * easing;
-      positionRef.current.y +=
-        (mousePosition.y - positionRef.current.y) * easing;
+      positionRef.current.x += (targetRef.current.x - positionRef.current.x) * easing;
+      positionRef.current.y += (targetRef.current.y - positionRef.current.y) * easing;
 
       setDisplayPosition({
         x: positionRef.current.x,
@@ -72,35 +65,27 @@ export default function MouseFollower() {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [mousePosition, isReducedMotion, isMobile]);
+  }, [isReducedMotion, isMobile]); // ✅ no mousePosition dependency
 
-  // Track mouse movement
+  // Track mouse movement — writes to ref, not state
   useEffect(() => {
-    if (isReducedMotion || isMobile) {
-      return;
-    }
+    if (isReducedMotion || isMobile) return;
 
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      targetRef.current = { x: e.clientX, y: e.clientY }; // ✅ ref, not setState
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [isReducedMotion, isMobile]);
 
   // Detect hover over interactive elements
   useEffect(() => {
-    if (isReducedMotion || isMobile) {
-      return;
-    }
+    if (isReducedMotion || isMobile) return;
 
     const handleMouseEnter = () => setIsHoveringInteractive(true);
     const handleMouseLeave = () => setIsHoveringInteractive(false);
 
-    // Select all interactive elements
     const interactiveElements = document.querySelectorAll(
       "a, button, [role='button'], input, textarea, select, [tabindex]:not([tabindex='-1'])"
     );
@@ -118,10 +103,7 @@ export default function MouseFollower() {
     };
   }, [isReducedMotion, isMobile]);
 
-  // Don't render on mobile or if reduced motion is preferred
-  if (isReducedMotion || isMobile) {
-    return null;
-  }
+  if (isReducedMotion || isMobile) return null;
 
   return (
     <div
@@ -129,20 +111,15 @@ export default function MouseFollower() {
       style={{
         left: `${displayPosition.x}px`,
         top: `${displayPosition.y}px`,
-        transform: `translate(-50%, -50%) scale(${
-          isHoveringInteractive ? 0.6 : 1
-        })`,
+        transform: `translate(-50%, -50%) scale(${isHoveringInteractive ? 0.6 : 1})`,
         transition: "transform 0.3s ease-out",
         willChange: "transform",
       }}
     >
       <div
         className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white"
-        style={{
-          filter: "blur(1px)",
-        }}
+        style={{ filter: "blur(1px)" }}
       />
     </div>
   );
 }
-
