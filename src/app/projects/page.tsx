@@ -111,12 +111,12 @@ const projects = [
     },
     {
         id: 3,
-        title: "Project 3",
-        description: "Comming soon..",
-        techStack: "Comming soon..",
-        Result: "Comming soon..",
+        title: "Finance Dashboard",
+        description: "A smart personal finance dashboard built with React and Node.js that tracks income and expenses, visualizes spending patterns, and generates intelligent insights to help users manage their money efficiently.",
+        techStack: "React.js, Node.js, Express.js, json-server, Recharts",
+        Result: "~ 95% accurate expense categorization 📊 with real-time tracking and up to 30% better spending awareness 💰",
         demoUrl: "#",
-        codeUrl: "#",
+        codeUrl: "https://github.com/sai-unknown/finance-dashboard",
     },
     {
         id: 4,
